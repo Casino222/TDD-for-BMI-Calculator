@@ -18,8 +18,12 @@ def test_boundary_underweight_to_normal():
     assert calculate_bmi(5, 10, 129) == (18.5, "Normal weight")
 
 def test_boundary_normal_to_overweight():
-    assert calculate_bmi(5, 10, 174) == (25.0, "Overweight")  
+    assert calculate_bmi(5, 10, 174) == (25.0, "Overweight")
 
 def test_boundary_overweight_to_obese():
     assert calculate_bmi(5, 10, 205) == (29.4, "Overweight")  
+
+def test_boundary_shift():
+    assert calculate_bmi(5, 10, 128) == (18.4, "Underweight")  
+
 
